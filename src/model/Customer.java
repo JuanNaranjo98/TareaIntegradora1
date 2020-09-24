@@ -2,24 +2,24 @@ package model;
 
 public class Customer {
 	
-	private String type;
+	private String idType;
 	private int idNumber;
 	private String name;
 	private int phone;
 	private String address;
 	
-	public Customer(String t, int id, String n, int p, String a) {
-		type = t;
+	public Customer(String idt, int id, String n, int p, String a) {
+		idType = idt;
 		idNumber = id;
 		name = n;
 		phone = p;
 		address = a;
 	}
 	public String getType() {
-		return type;
+		return idType;
 	}
 	public void setType(String type) {
-		this.type = type;
+		this.idType = type;
 	}
 	public int getIdNumber() {
 		return idNumber;

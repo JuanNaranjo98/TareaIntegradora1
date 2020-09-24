@@ -12,8 +12,7 @@ public class Order {
 	private int restaurantNit;
 	private List<Product> productList;
 	
-	public Order(String c, String d, String h, String cc, int rn,
-			List<Product> pL) {
+	public Order(String c, String d, String h, String cc, int rn) {
 		code = c;
 		date = d;
 		hour = h;
