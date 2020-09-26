@@ -3,12 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 
 
 public class DeliveryManager implements Serializable {
@@ -33,9 +27,22 @@ public class DeliveryManager implements Serializable {
 		restaurants.add(r);
 	}
 	
-	public void addCustomer(String type, int idNumber, String name, int phone, String address) {
-		Customer c = new Customer(type,idNumber,name,phone,address);
+	public void addCustomer(String type, int idNumber, String name, String lastName, int phone, String address) {
+		Customer c = new Customer(type, idNumber, name, lastName,phone,address);
 		customers.add(c);
+		
+		if(customers.isEmpty()){
+	 		customers.add(c);
+	  	}else{
+	  		int i = 0;
+	 		while(i<customers.size() && customers.get(i).getLastName().compareTo(c.getLastName())>0){
+	  			i++;
+	 		}
+	 		while(i<customers.size() && customers.get(i).getName().compareTo(c.getName())>0){
+	  			i++;
+	 		}
+	 		((ArrayList<Customer>)customers).add(i,c);
+	 	}
 	}	
 	
 	public void addProduct(String code,String name, String description, double cost, int restauranNit) {
@@ -43,8 +50,8 @@ public class DeliveryManager implements Serializable {
 		products.add(p);
 	}
 	
-	public void addOrder(String code, String date, String hour, String customerCode, int restauranNit) {
-		Order o = new Order(code,date,hour,customerCode,restauranNit);
+	public void addOrder(String code, String date, String customerCode, int restauranNit) {
+		Order o = new Order(code,date,customerCode,restauranNit);
 		orders.add(o);
 	}
 	

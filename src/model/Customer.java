@@ -5,13 +5,15 @@ public class Customer {
 	private String idType;
 	private int idNumber;
 	private String name;
+	private String lastName;
 	private int phone;
 	private String address;
 	
-	public Customer(String idt, int id, String n, int p, String a) {
+	public Customer(String idt, int id, String n, String ln, int p, String a) {
 		idType = idt;
 		idNumber = id;
 		name = n;
+		lastName = ln;
 		phone = p;
 		address = a;
 	}
@@ -32,6 +34,12 @@ public class Customer {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	public int getPhone() {
 		return phone;

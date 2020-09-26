@@ -7,15 +7,13 @@ public class Order {
 	
 	private String code;
 	private String date;
-	private String hour;
 	private String customerCode;
 	private int restaurantNit;
 	private List<Product> productList;
 	
-	public Order(String c, String d, String h, String cc, int rn) {
+	public Order(String c, String d, String cc, int rn) {
 		code = c;
 		date = d;
-		hour = h;
 		customerCode = cc;
 		restaurantNit = rn;
 		productList = new ArrayList<Product>();
@@ -35,14 +33,6 @@ public class Order {
 
 	public void setDate(String date) {
 		this.date = date;
-	}
-
-	public String getHour() {
-		return hour;
-	}
-
-	public void setHour(String hour) {
-		this.hour = hour;
 	}
 
 	public String getCustomerCode() {

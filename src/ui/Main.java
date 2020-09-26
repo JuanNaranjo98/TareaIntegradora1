@@ -1,12 +1,13 @@
 package ui;
 
+import java.io.IOException;
+
 public class Main {
 
-	public static void main(String[] args) {
-		int x = 23;
-		int  y = 4;
-		double z = x/y; 
-		System.out.println(x/(double)y);
+	public static void main(String[] args) throws IOException {
+		Menu m;
+		m = new Menu();
+		m.startPrincipalMenu();
 	}
-
+		
 }
